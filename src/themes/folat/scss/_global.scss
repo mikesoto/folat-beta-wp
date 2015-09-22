@@ -1,0 +1,28 @@
+body { 
+     padding-top: 30px; 
+}
+
+header {
+	.main-navigation{
+		padding:0 20px;
+	}
+
+	.navbar {
+		margin-bottom:0;
+	}
+}
+
+footer {
+	padding:20px;
+	background-color:$gray;
+	color:#fff;
+	margin-top:40px;
+	ul.footer-menu{
+		list-style: none;
+		text-align:center;
+		a {
+			color:#fff;
+			font-size:10px;
+		}
+	}
+}

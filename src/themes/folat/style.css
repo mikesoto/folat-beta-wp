@@ -1,0 +1,57 @@
+/*
+Theme Name: folat
+Author: Miguel Angel Bonachea Soto
+Author URI: https://folat-edu.net/beta
+Description: 2015 folat-edu.net beta theme
+Version: 1.0
+*/
+/* line 1, scss/_global.scss */
+body {
+  padding-top: 30px;
+}
+
+/* line 6, scss/_global.scss */
+header .main-navigation {
+  padding: 0 20px;
+}
+/* line 10, scss/_global.scss */
+header .navbar {
+  margin-bottom: 0;
+}
+
+/* line 15, scss/_global.scss */
+footer {
+  padding: 20px;
+  background-color: #555555;
+  color: #fff;
+  margin-top: 40px;
+}
+/* line 20, scss/_global.scss */
+footer ul.footer-menu {
+  list-style: none;
+  text-align: center;
+}
+/* line 23, scss/_global.scss */
+footer ul.footer-menu a {
+  color: #fff;
+  font-size: 10px;
+}
+
+/* line 1, scss/pages/_home.scss */
+.container {
+  width: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+/* line 7, scss/pages/_home.scss */
+.container .jumbotron, .container-fluid .jumbotron {
+  border-radius: 0;
+}
+
+/* line 11, scss/pages/_home.scss */
+.featured-headings {
+  padding: 10px 40px;
+}
+
+/*# sourceMappingURL=style.css.map */
