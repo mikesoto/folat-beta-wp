@@ -1,2 +1,11 @@
+dist/
+backup/
+*.pyc
+.vagrant
 *wp-config.php
 *.sass-cache
+*.sublime*
+.DS_Store
+.idea
+Vagrantfile
+fabfile.py
