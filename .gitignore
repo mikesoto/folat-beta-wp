@@ -7,6 +7,4 @@ backup/
 *.sublime*
 .DS_Store
 .idea
-Vagrantfile
-fabfile.py
 wordpress-workflow
