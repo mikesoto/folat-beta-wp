@@ -1,0 +1,27 @@
+{
+  "name": "gulp-first",
+  "version": "1.0.0",
+  "description": "Gulp Wireframe",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "coffee-script": "*",
+    "gulp": "*",
+    "gulp-coffee": "*",
+    "gulp-load-plugins": "*",
+    "gulp-minify-css": "*",
+    "gulp-minify-html": "*",
+    "gulp-sass": "*",
+    "gulp-size": "*",
+    "gulp-uglify": "*",
+    "main-bower-files": "*"
+  },
+  "devDependencies": {
+    "gulp-connect": "*",
+    "gulp-plumber": "*"
+  }
+}

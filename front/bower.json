@@ -1,0 +1,12 @@
+{
+  "name": "Gulp Wireframe",
+  "version": "0.0.1",
+  "authors": [
+    "Erik Cru< <erkalmar@gmail.com>"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "jquery": "2.1.4",
+    "angularjs": "1.4"
+  }
+}
