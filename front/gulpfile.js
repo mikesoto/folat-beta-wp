@@ -7,7 +7,7 @@ var plumber = require('gulp-plumber');
 var connect = require('gulp-connect');
 
 // Esta tarea ejecutara todas las demas
-gulp.task('serve',['sass-build','watch','move-html','html-load','connect','move-js','move-jpg','move-png','move-files-scss','Notify'], function(){
+gulp.task('serve',['sass-build','watch','move-html','html-load','connect','move-js','move-mp4','move-jpg','move-png','move-files-scss','Notify'], function(){
 
 });
 
@@ -28,6 +28,7 @@ gulp.task('watch',function(){
   gulp.watch('app/assets/js/*.js',['move-js'])
   gulp.watch('app/assets/images/*.jpg',['move-jpg'])
   gulp.watch('app/assets/sass/fonts/',['move-files-scss'])
+  gulp.watch('app/assets/videos/*.mp4',['move-mp4'])
 });
 
 // Movemos todos los archivos html de la carpeta de desarrollo a produccion/staging
@@ -58,6 +59,11 @@ gulp.task('move-png',function(){
   .pipe(connect.reload())
 });
 
+gulp.task('move-mp4',function(){
+  gulp.src('app/assets/videos/*.mp4')
+  .pipe(gulp.dest('staging/assets/videos/'))
+  .pipe(connect.reload())
+});
 // Movemos todos los archivos html de la carpeta de desarrollo a produccion/staging
 gulp.task('move-jpg',function(){
   gulp.src('app/assets/images/*.jpg')
