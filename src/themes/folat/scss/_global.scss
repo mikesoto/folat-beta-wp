@@ -1,5 +1,5 @@
 body { 
-     padding-top: 30px; 
+     padding-top: 5px; 
 }
 
 header {
@@ -24,5 +24,12 @@ footer {
 			color:#fff;
 			font-size:10px;
 		}
+	}
+}
+
+.jumbotron {
+	p {
+		font-size:18px;
+		line-height:25px;
 	}
 }

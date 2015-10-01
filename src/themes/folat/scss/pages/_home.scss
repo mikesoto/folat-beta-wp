@@ -4,10 +4,51 @@
 	margin:0;
 }
 
+.navbar-brand {
+	img {
+		width:60px;
+		height:auto;
+		float:left;
+		margin-top:-20px;
+		margin-right:10px;
+	}
+}
+
 .container .jumbotron, .container-fluid .jumbotron{
 	border-radius:0;
 }
 
 .featured-headings {
 	padding:10px 40px;
+}
+
+.carousel-inner{
+	max-height:500px;
+
+	.item{
+		width:100%;
+		min-height:500px;
+		background-position: center;
+		background-size:cover;
+		background-repeat:no-repeat;
+	}
+}
+
+.carousel-caption {
+	bottom:150px;
+	width:100%;
+	right:0;
+	left:0;
+	background-color:rgba(0,0,0,0.7);
+	.title{
+		font-size:28px;
+		line-height:40px;
+		font-weight:bold;
+	}
+
+	.content{
+		font-size:18px;
+		margin-bottom:20px;
+		margin-top:5px;
+	}
 }

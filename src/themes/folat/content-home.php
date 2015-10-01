@@ -1,40 +1,54 @@
-      
-<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+<?php
+  //Get all posts of type slider for carousel
+  $args = array(
+        'post_type' => 'slider',
+        'post_status' => 'publish',
+        'order'   => 'ASC',
+      );
+  $slider_query = new WP_Query( $args );
+  $slides_arr = array();
+
+  while( $slider_query->have_posts() ) {
+        $slider_query->the_post();
+
+        $slide['title'] = get_the_title();
+        $slide['excerpt'] = get_the_excerpt();
+        $slide['image'] = wp_get_attachment_url( get_post_thumbnail_id($post->ID) );
+        $linkto = get_post_custom_values('linkto', $post->ID);
+        $slide['linkto'] = (is_array($linkto)) ? $linkto[0] : get_the_permalink() ;
+        $btntext = get_post_custom_values('btntext', $post->ID);
+        $slide['btntext'] = (is_array($linkto)) ? $btntext[0] : 'Leer Más' ;
+        array_push($slides_arr, $slide);
+  }
+  wp_reset_query();
+?>      
+<div id="folat-home-carousel" class="carousel slide" data-ride="carousel">
   <!-- Indicators -->
   <ol class="carousel-indicators">
-    <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
-    <li data-target="#carousel-example-generic" data-slide-to="1"></li>
-    <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+    <?php for($i = 0; $i < count($slides_arr); $i++):?>
+          <li data-target="#folat-home-carousel" data-slide-to="<?= $i;?>" <?php if($i==0) echo 'class="active"';?>></li>
+    <?php endfor;?>
   </ol>
 
   <!-- Wrapper for slides -->
   <div class="carousel-inner" role="listbox">
-    <div class="item active">
-      <img src="http://placehold.it/1500x400" alt="">
-      <div class="carousel-caption">
-        Caption for slide 1
+    <?php for($i = 0; $i < count($slides_arr); $i++):?>
+      <div class="item <?php if($i == 0) echo 'active';?>" style="background-image:url(<?= $slides_arr[$i]['image'];?>);">
+        <div class="carousel-caption">
+          <div class="title"><?php echo $slides_arr[$i]['title'];?></div>
+          <div class="content"><?php echo $slides_arr[$i]['excerpt'];?></div>
+          <a href="<?php echo $slides_arr[$i]['linkto'];?>" class="btn btn-default btn-lg"><?php echo $slides_arr[$i]['btntext'];?></a>
+        </div>
       </div>
-    </div>
-    <div class="item">
-      <img src="http://placehold.it/1500x400" alt="">
-      <div class="carousel-caption">
-        Caption for slide 2
-      </div>
-    </div>
-    <div class="item">
-      <img src="http://placehold.it/1500x400" alt="">
-      <div class="carousel-caption">
-        Caption for slide 3
-      </div>
-    </div>
+    <?php endfor;?>
   </div>
 
   <!-- Controls -->
-  <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+  <a class="left carousel-control" href="#folat-home-carousel" role="button" data-slide="prev">
     <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
     <span class="sr-only">Previous</span>
   </a>
-  <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+  <a class="right carousel-control" href="#folat-home-carousel" role="button" data-slide="next">
     <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
     <span class="sr-only">Next</span>
   </a>
@@ -42,26 +56,17 @@
 
 
 <div class="jumbotron">
-  <h1>Hello, world!</h1>
-  <p>This is a template for a simple marketing or informational website. It includes a large callout called the hero unit and three supporting pieces of content. Use it as a starting point to create something more unique.</p>
-  <p><a class="btn btn-primary btn-large">Learn more &raquo;</a></p>
+  <h2>¿Qué es FOLAT?</h2>
+  <p><?php the_content();?></p>
+  <div class="text-center">
+    <p><a class="btn btn-primary btn-large">Inscríbase Hoy!</a></p>
+  </div>
 </div>
 
-<!-- Example row of columns -->
 <div class="row featured-headings">
-  <div class="col-sm-4">
-    <h2>Heading</h2>
-    <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-    <p><a class="btn" href="#">View details &raquo;</a></p>
-  </div>
-  <div class="col-sm-4">
-    <h2>Heading</h2>
-    <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-    <p><a class="btn" href="#">View details &raquo;</a></p>
- </div>
-  <div class="col-sm-4">
-    <h2>Heading</h2>
-    <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
-    <p><a class="btn" href="#">View details &raquo;</a></p>
-  </div>
+  <?php if ( is_active_sidebar( 'home_featured' ) ) : ?>
+    <div class="primary-sidebar widget-area" role="complementary">
+      <?php dynamic_sidebar( 'home_featured' ); ?>
+    </div>
+  <?php endif; ?>
 </div>

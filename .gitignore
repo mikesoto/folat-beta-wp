@@ -8,3 +8,4 @@ backup/
 .DS_Store
 .idea
 wordpress-workflow
+*npm-debug.log

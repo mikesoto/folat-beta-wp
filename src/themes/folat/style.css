@@ -7,7 +7,7 @@ Version: 1.0
 */
 /* line 1, scss/_global.scss */
 body {
-  padding-top: 30px;
+  padding-top: 5px;
 }
 
 /* line 6, scss/_global.scss */
@@ -37,6 +37,12 @@ footer ul.footer-menu a {
   font-size: 10px;
 }
 
+/* line 31, scss/_global.scss */
+.jumbotron p {
+  font-size: 18px;
+  line-height: 25px;
+}
+
 /* line 1, scss/pages/_home.scss */
 .container {
   width: 100%;
@@ -44,14 +50,57 @@ footer ul.footer-menu a {
   margin: 0;
 }
 
-/* line 7, scss/pages/_home.scss */
+/* line 8, scss/pages/_home.scss */
+.navbar-brand img {
+  width: 60px;
+  height: auto;
+  float: left;
+  margin-top: -20px;
+  margin-right: 10px;
+}
+
+/* line 17, scss/pages/_home.scss */
 .container .jumbotron, .container-fluid .jumbotron {
   border-radius: 0;
 }
 
-/* line 11, scss/pages/_home.scss */
+/* line 21, scss/pages/_home.scss */
 .featured-headings {
   padding: 10px 40px;
+}
+
+/* line 25, scss/pages/_home.scss */
+.carousel-inner {
+  max-height: 500px;
+}
+/* line 28, scss/pages/_home.scss */
+.carousel-inner .item {
+  width: 100%;
+  min-height: 500px;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+/* line 37, scss/pages/_home.scss */
+.carousel-caption {
+  bottom: 150px;
+  width: 100%;
+  right: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+/* line 43, scss/pages/_home.scss */
+.carousel-caption .title {
+  font-size: 28px;
+  line-height: 40px;
+  font-weight: bold;
+}
+/* line 49, scss/pages/_home.scss */
+.carousel-caption .content {
+  font-size: 18px;
+  margin-bottom: 20px;
+  margin-top: 5px;
 }
 
 /*# sourceMappingURL=style.css.map */

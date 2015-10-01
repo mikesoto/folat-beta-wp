@@ -31,7 +31,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="#">FOLAT</a>
+          <a class="navbar-brand" href="<?php echo home_url();?>"><img src="<?php echo home_url().'/wp-content/themes/folat/images/folat-hedge-hog-small.png';?>">FOLAT</a>
         </div>  
 
         <!-- Collect the nav links, forms, and other content for toggling -->
